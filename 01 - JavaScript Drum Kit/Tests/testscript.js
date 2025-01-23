@@ -10,14 +10,14 @@ const data = {
   l: "sounds/tink.wav",
 };
 
-document.addEventListener("keydown", (e) => {
+function handleKeyPress(e) {
   const key = e.key.toLowerCase();
   if (data[key]) {
     play(data[key]);
   } else {
     console.log("Sound not found for key:", key);
   }
-});
+}
 
 function play(sound) {
   try {
