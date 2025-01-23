@@ -12,8 +12,19 @@ const data = {
 
 document.addEventListener("keydown", (e) => {
   const key = e.key.toLowerCase();
+  let key_el = document.querySelector(`.key[data-key= "${e.key}"]`);
+  // console.log(key_el);
+  if (!key_el) {
+    console.log("Key not found for key", key);
+    return;
+  }
+
   if (data[key]) {
     play(data[key]);
+    key_el.classList.add("playing");
+    setTimeout(() => {
+      key_el.classList.remove("playing");
+    }, 100);
   } else {
     console.log("Sound not found for key:", key);
   }
@@ -29,8 +40,3 @@ function play(sound) {
     console.error("An error occurred while playing the sound:", error);
   }
 }
-
-// Attach the event listener (excluded from testing)
-// document.addEventListener("keydown", handleKeyPress);
-
-module.exports = { data, handleKeyPress, play };
