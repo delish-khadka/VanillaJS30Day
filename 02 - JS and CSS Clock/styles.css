@@ -1,4 +1,14 @@
 body {
+  position: relative;
+}
+.stupid-text {
+  position: absolute;
+  text-align: justify;
+  width: 50%;
+  left: 400px;
+  top: 120px;
+}
+.stupid-clock-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +46,23 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.hours-indicator {
+  position: absolute;
+  width: 20px; /* Size of the number container */
+  height: 20px;
+  text-align: center;
+  line-height: 20px; /* Vertically center the text */
+  font-size: 14px;
+  font-weight: bold;
+  left: 88px;
+  top: 88px;
+  color: black;
+  transform-origin: 50% 100%; /* Rotate from the bottom center */
+}
+
+/* .hr-1{
+  transform: (30deg) translate(0px, -130px) rotate(-30deg)
+} */
 .hour {
   height: 6px;
   background: red;
